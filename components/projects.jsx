@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { projects } from "@/lib/data";
 import ProjectArt from "@/components/project-art";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "@/components/icons";
+import { ArrowLeft, ArrowRight, ArrowUpRight, SocialIcon } from "@/components/icons";
 
 export default function Projects() {
   const [active, setActive] = useState(0);
@@ -45,36 +45,61 @@ export default function Projects() {
       {viewAll ? (
         <div className="mt-7 grid animate-rise gap-4 sm:grid-cols-2">
           {projects.map((item, index) => (
-            <button
+            <div
               key={item.slug}
-              type="button"
-              onClick={() => {
-                setActive(index);
-                setViewAll(false);
-                setOpenSlug(null);
-              }}
-              className="group border-[3px] border-ink bg-paper-light text-left shadow-brutal-sm transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal"
+              className="group min-w-0 border-[3px] border-ink bg-paper-light shadow-brutal-sm transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal"
             >
-              <div className="relative aspect-[16/9] overflow-hidden border-b-[3px] border-ink bg-paper">
-                <ProjectArt slug={item.slug} title={item.title} />
-                <span className="absolute left-2.5 top-2.5 border-[2px] border-ink bg-lime px-2 py-0.5 font-mono text-[9px] font-bold">
-                  {item.index}
-                </span>
-              </div>
-              <div className="flex items-center justify-between gap-3 p-4">
-                <div className="min-w-0">
-                  <p className="font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-ink/55">
-                    {item.year} · {item.type}
-                  </p>
-                  <h3 className="mt-1 truncate font-display text-lg uppercase leading-tight">
-                    {item.title}
-                  </h3>
+              <button
+                type="button"
+                onClick={() => {
+                  setActive(index);
+                  setViewAll(false);
+                  setOpenSlug(null);
+                }}
+                className="block w-full text-left"
+              >
+                <div className="relative aspect-[16/9] overflow-hidden border-b-[3px] border-ink bg-paper">
+                  <ProjectArt slug={item.slug} title={item.title} />
+                  <span className="absolute left-2.5 top-2.5 border-[2px] border-ink bg-lime px-2 py-0.5 font-mono text-[9px] font-bold">
+                    {item.index}
+                  </span>
                 </div>
-                <span className="grid size-8 shrink-0 place-items-center border-[3px] border-ink bg-paper transition-colors group-hover:bg-pink">
-                  <ArrowUpRight className="size-4" />
+                <div className="flex items-center justify-between gap-3 p-4">
+                  <div className="min-w-0">
+                    <p className="font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-ink/55">
+                      {item.year} · {item.type}
+                    </p>
+                    <h3 className="mt-1 truncate font-display text-lg uppercase leading-tight">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <span className="grid size-8 shrink-0 place-items-center border-[3px] border-ink bg-paper transition-colors group-hover:bg-pink">
+                    <ArrowUpRight className="size-4" />
+                  </span>
+                </div>
+              </button>
+
+              <div className="flex flex-wrap items-center justify-between gap-2 border-t-[2px] border-ink/15 px-4 py-2.5">
+                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-ink/45">
+                  Source code
                 </span>
+                <div className="flex flex-wrap gap-1.5">
+                  {item.repos.map((repo) => (
+                    <a
+                      key={repo.href}
+                      href={repo.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${repo.label} untuk project ${item.title}`}
+                      className="inline-flex items-center gap-1.5 border-[2px] border-ink bg-paper px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.08em] transition-colors hover:bg-lime"
+                    >
+                      <SocialIcon name="github" className="size-3" />
+                      {repo.short}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </button>
+            </div>
           ))}
         </div>
       ) : (
@@ -136,15 +161,31 @@ export default function Projects() {
               )}
 
               <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-                <button
-                  type="button"
-                  onClick={() => setOpenSlug(expanded ? null : project.slug)}
-                  aria-expanded={expanded}
-                  className="group inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-4 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none"
-                >
-                  {expanded ? "Tutup Detail" : "Detail Project"}
-                  <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+                <div className="flex flex-wrap items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setOpenSlug(expanded ? null : project.slug)}
+                    aria-expanded={expanded}
+                    className="group inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-4 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none"
+                  >
+                    {expanded ? "Tutup Detail" : "Detail Project"}
+                    <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </button>
+                  {project.repos.map((repo) => (
+                    <a
+                      key={repo.href}
+                      href={repo.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${repo.label} untuk project ${project.title}`}
+                      className="group inline-flex items-center gap-2 border-[3px] border-ink bg-ink px-4 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-paper shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-violet hover:shadow-none"
+                    >
+                      <SocialIcon name="github" className="size-3.5" />
+                      {repo.short}
+                      <ArrowUpRight className="size-3 transition-transform duration-300 group-hover:rotate-45" />
+                    </a>
+                  ))}
+                </div>
                 <span className="font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-ink/45">
                   {project.index} / 0{projects.length}
                 </span>

@@ -40,6 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# local reference assets (site uses public/CV_Ahmad_Zainudin_Fanani.pdf)
+# local source assets (versi web-nya ada di public/)
 /CV_ahmadZainudinFanani.pdf
 /e39039ed0bae10eb5bc01f8c93a001e1.jpg

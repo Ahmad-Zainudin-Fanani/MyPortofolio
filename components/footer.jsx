@@ -13,8 +13,8 @@ export default function Footer() {
           <span className="grid size-8 place-items-center border-[3px] border-ink bg-paper font-mono text-[11px] font-bold transition-transform duration-200 group-hover:-rotate-6">
             {"</>"}
           </span>
-          <span className="font-display text-sm tracking-tight">
-            FANANI DEV
+          <span className="font-mono text-sm font-bold tracking-[-0.02em]">
+            Fanani_Dev
           </span>
         </a>
 
@@ -32,8 +32,8 @@ export default function Footer() {
             <a
               key={social.label}
               href={social.href}
-              target={social.icon === "mail" ? undefined : "_blank"}
-              rel={social.icon === "mail" ? undefined : "noreferrer"}
+              target="_blank"
+              rel="noreferrer"
               aria-label={social.label}
               className="grid size-9 place-items-center border-[3px] border-ink bg-paper-light transition-colors duration-150 hover:bg-lime"
             >

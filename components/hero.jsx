@@ -1,12 +1,15 @@
+import Image from "next/image";
 import { profile, socialLinks } from "@/lib/data";
+import { CvButton } from "@/components/cv-provider";
 import {
-  ArrowDown,
   ArrowRight,
   SocialIcon,
   StarBurst,
 } from "@/components/icons";
 
 function PortraitPlaceholder() {
+  const photo = profile.photo;
+
   return (
     <div className="relative w-[250px] sm:w-[290px] xl:w-[330px]">
       <div
@@ -15,9 +18,19 @@ function PortraitPlaceholder() {
       />
       <div className="relative border-[3px] border-ink bg-paper p-2.5">
         <div className="relative aspect-[3/4] overflow-hidden border-[3px] border-ink bg-grid">
+          {photo && (
+            <Image
+              src={photo}
+              alt={`Foto ${profile.name}`}
+              fill
+              sizes="(max-width: 640px) 250px, (max-width: 1280px) 290px, 330px"
+              className="object-cover"
+              priority
+            />
+          )}
           <svg
             viewBox="0 0 300 400"
-            className="absolute inset-0 h-full w-full"
+            className={`absolute inset-0 h-full w-full ${photo ? "hidden" : ""}`}
             role="img"
             aria-label="Placeholder foto profil Ahmad Zainudin Fanani"
           >
@@ -101,15 +114,6 @@ function PortraitPlaceholder() {
               <circle cx="86" cy="206" r="3" />
             </g>
           </svg>
-
-          <div className="absolute inset-x-3 top-3 flex items-start justify-between">
-            <span className="border-[3px] border-ink bg-paper px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.14em]">
-              Foto kamu di sini
-            </span>
-            <span className="border-[3px] border-ink bg-violet px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-paper">
-              2026
-            </span>
-          </div>
         </div>
       </div>
     </div>
@@ -214,14 +218,10 @@ export default function Hero() {
               Lihat Project Saya
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            <a
-              href={profile.cv}
-              download
-              className="group inline-flex items-center justify-center gap-2.5 border-[3px] border-ink bg-paper-light px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] shadow-brutal transition-all duration-150 hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-pink-soft hover:shadow-none"
-            >
-              Download Resume
-              <ArrowDown className="size-4 transition-transform duration-300 group-hover:translate-y-0.5" />
-            </a>
+            <CvButton className="group inline-flex items-center justify-center gap-2.5 border-[3px] border-ink bg-paper-light px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] shadow-brutal transition-all duration-150 hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-pink-soft hover:shadow-none">
+              Lihat CV
+              <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </CvButton>
           </div>
 
           <div className="mt-9 animate-rise [animation-delay:320ms]">
@@ -233,8 +233,8 @@ export default function Hero() {
                 <a
                   key={social.label}
                   href={social.href}
-                  target={social.icon === "mail" ? undefined : "_blank"}
-                  rel={social.icon === "mail" ? undefined : "noreferrer"}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={social.label}
                   className="grid size-10 place-items-center border-[3px] border-ink bg-paper-light shadow-brutal-sm transition-all duration-150 hover:-translate-y-0.5 hover:bg-lime hover:shadow-brutal"
                 >

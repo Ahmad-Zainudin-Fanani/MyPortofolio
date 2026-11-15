@@ -5,6 +5,7 @@ import Projects from "@/components/projects";
 import TechStack from "@/components/tech-stack";
 import Experience from "@/components/experience";
 import Footer from "@/components/footer";
+import CvProvider from "@/components/cv-provider";
 import { profile } from "@/lib/data";
 
 const structuredData = {
@@ -15,7 +16,7 @@ const structuredData = {
   jobTitle: profile.role,
   description:
     "Mahasiswa aktif D4 Teknik Informatika Politeknik Negeri Malang dan software developer web & mobile.",
-  email: `mailto:${profile.email}`,
+  email: profile.email,
   telephone: profile.phone,
   address: {
     "@type": "PostalAddress",
@@ -40,32 +41,34 @@ const structuredData = {
 
 export default function Home() {
   return (
-    <div className="mx-auto w-full max-w-[1440px] border-x-[3px] border-ink bg-paper">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <Header />
+    <CvProvider>
+      <div className="mx-auto w-full max-w-[1440px] border-x-[3px] border-ink bg-paper">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <Header />
 
-      <main>
-        <Hero />
-        <SkillsStrip />
+        <main>
+          <Hero />
+          <SkillsStrip />
 
-        <section
-          id="projects"
-          aria-labelledby="projects-heading"
-          className="border-b-[3px] border-ink bg-paper"
-        >
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px]">
-            <Projects />
-            <TechStack />
-          </div>
-        </section>
+          <section
+            id="projects"
+            aria-labelledby="projects-heading"
+            className="border-b-[3px] border-ink bg-paper"
+          >
+            <div className="grid lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_400px]">
+              <Projects />
+              <TechStack />
+            </div>
+          </section>
 
-        <Experience />
-      </main>
+          <Experience />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </CvProvider>
   );
 }

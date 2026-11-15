@@ -1,4 +1,5 @@
 import { education, experiences, profile } from "@/lib/data";
+import { CvButton } from "@/components/cv-provider";
 import { ArrowRight, StarBurst } from "@/components/icons";
 
 function ContactPanel() {
@@ -34,7 +35,9 @@ function ContactPanel() {
 
       <div className="relative mt-8">
         <a
-          href={`mailto:${profile.email}`}
+          href={profile.gmailCompose}
+          target="_blank"
+          rel="noreferrer"
           className="group inline-flex items-center gap-2.5 border-[3px] border-ink bg-paper-light px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-ink shadow-brutal transition-all duration-150 hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-lime hover:shadow-none"
         >
           Hubungi Saya
@@ -132,14 +135,10 @@ export default function Experience() {
             </div>
           </div>
 
-          <a
-            href={profile.cv}
-            download
-            className="group mt-6 inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none"
-          >
+          <CvButton className="group mt-6 inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none">
             Lihat CV Lengkap
             <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          </CvButton>
         </div>
 
         <ContactPanel />

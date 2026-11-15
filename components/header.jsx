@@ -34,8 +34,8 @@ export default function Header() {
           <span className="grid size-8 place-items-center border-[3px] border-ink bg-paper font-mono text-[11px] font-bold transition-transform duration-200 group-hover:-rotate-6">
             {"</>"}
           </span>
-          <span className="font-display text-sm tracking-tight sm:text-base">
-            FANANI<span className="hidden sm:inline"> DEV</span>
+          <span className="font-mono text-sm font-bold tracking-[-0.02em] sm:text-[15px]">
+            Fanani_Dev
           </span>
         </a>
 
@@ -56,7 +56,9 @@ export default function Header() {
         </nav>
 
         <a
-          href={`mailto:${profile.email}`}
+          href={profile.gmailCompose}
+          target="_blank"
+          rel="noreferrer"
           className="group hidden items-center gap-3 border-l-[3px] border-ink bg-violet px-5 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-paper transition-colors hover:bg-violet-deep sm:flex md:px-7"
         >
           Hubungi Saya
@@ -115,8 +117,8 @@ export default function Header() {
                 <a
                   key={social.label}
                   href={social.href}
-                  target={social.icon === "mail" ? undefined : "_blank"}
-                  rel={social.icon === "mail" ? undefined : "noreferrer"}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={social.label}
                   className="grid size-9 place-items-center border-[3px] border-ink bg-paper-light transition-colors hover:bg-pink"
                 >
@@ -125,7 +127,9 @@ export default function Header() {
               ))}
             </div>
             <a
-              href={`mailto:${profile.email}`}
+              href={profile.gmailCompose}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setOpen(false)}
               className="flex items-center gap-2 border-[3px] border-ink bg-violet px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-paper shadow-brutal-sm transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
             >
