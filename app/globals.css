@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f4efe3;
+  --color-paper-light: #fbf8f0;
+  --color-paper-dark: #e9e3d4;
+  --color-ink: #141414;
+  --color-pink: #ff7dae;
+  --color-pink-soft: #ffc2d7;
+  --color-lime: #c9f94b;
+  --color-lime-soft: #e6ffa3;
+  --color-violet: #8b5cf6;
+  --color-violet-deep: #6d3ef5;
+  --color-sky: #58a6d6;
+  --color-orange: #f08a3c;
+
+  --font-display: var(--font-archivo-black), "Arial Black", "Helvetica Neue",
+    sans-serif;
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular",
+    monospace;
+
+  --shadow-brutal-sm: 4px 4px 0 0 #141414;
+  --shadow-brutal: 6px 6px 0 0 #141414;
+  --shadow-brutal-lg: 10px 10px 0 0 #141414;
+  --shadow-brutal-pink: 8px 8px 0 0 #ff7dae;
+  --shadow-brutal-violet: 8px 8px 0 0 #8b5cf6;
+  --shadow-brutal-lime: 8px 8px 0 0 #c9f94b;
+
+  --animate-blink: blink 1.1s steps(2, start) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-marquee: marquee 28s linear infinite;
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper-dark);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-lime);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-violet-deep);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Graph-paper backgrounds */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(20 20 20 / 0.11) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(20 20 20 / 0.11) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+@utility bg-grid-sm {
+  background-image:
+    linear-gradient(to right, rgb(20 20 20 / 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(20 20 20 / 0.09) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+@utility bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgb(20 20 20 / 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(20 20 20 / 0.2) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility bg-dots {
+  background-image: radial-gradient(rgb(20 20 20 / 0.24) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+}
+
+@utility bg-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #141414 0 2px,
+    transparent 2px 9px
+  );
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Small entrance animation for hero content */
+@utility animate-rise {
+  animation: rise 0.7s cubic-bezier(0.22, 0.85, 0.25, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal (see components/reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s cubic-bezier(0.22, 0.85, 0.25, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
