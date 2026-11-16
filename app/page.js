@@ -15,7 +15,7 @@ const structuredData = {
   alternateName: profile.displayName,
   jobTitle: profile.role,
   description:
-    "Mahasiswa aktif D4 Teknik Informatika Politeknik Negeri Malang dan software developer web & mobile.",
+    "Mahasiswa D4 Teknik Informatika Politeknik Negeri Malang yang berfokus pada pengembangan aplikasi web dan mobile.",
   email: profile.email,
   telephone: profile.phone,
   address: {
@@ -42,7 +42,7 @@ const structuredData = {
 export default function Home() {
   return (
     <CvProvider>
-      <div className="mx-auto w-full max-w-[1440px] border-x-[3px] border-ink bg-paper">
+      <div className="mx-auto w-full max-w-360 border-x-[3px] border-ink bg-paper">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

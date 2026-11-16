@@ -23,21 +23,21 @@ export default function Projects() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-ink/55">
-            Portfolio / 2025 — 2026
+            Portofolio / 2025 – 2026
           </p>
           <h2
             id="projects-heading"
             className="mt-2 font-display text-[clamp(1.65rem,3.2vw,2.6rem)] uppercase leading-none tracking-tight"
           >
-            Featured Projects
+            Proyek Unggulan
           </h2>
         </div>
         <button
           type="button"
           onClick={() => setViewAll((value) => !value)}
-          className="group inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-3.5 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none"
+          className="group inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-3.5 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-lime hover:shadow-none"
         >
-          {viewAll ? "Tutup Galeri" : "Lihat Semua Project"}
+          {viewAll ? "Tutup Galeri" : "Lihat Semua Proyek"}
           <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:rotate-45" />
         </button>
       </div>
@@ -58,9 +58,9 @@ export default function Projects() {
                 }}
                 className="block w-full text-left"
               >
-                <div className="relative aspect-[16/9] overflow-hidden border-b-[3px] border-ink bg-paper">
+                <div className="relative aspect-video overflow-hidden border-b-[3px] border-ink bg-paper">
                   <ProjectArt slug={item.slug} title={item.title} />
-                  <span className="absolute left-2.5 top-2.5 border-[2px] border-ink bg-lime px-2 py-0.5 font-mono text-[9px] font-bold">
+                  <span className="absolute left-2.5 top-2.5 border-2 border-ink bg-lime px-2 py-0.5 font-mono text-[9px] font-bold">
                     {item.index}
                   </span>
                 </div>
@@ -79,9 +79,9 @@ export default function Projects() {
                 </div>
               </button>
 
-              <div className="flex flex-wrap items-center justify-between gap-2 border-t-[2px] border-ink/15 px-4 py-2.5">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-t-2 border-ink/15 px-4 py-2.5">
                 <span className="font-mono text-[9px] font-bold uppercase tracking-[0.14em] text-ink/45">
-                  Source code
+                  Kode sumber
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {item.repos.map((repo) => (
@@ -90,8 +90,8 @@ export default function Projects() {
                       href={repo.href}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`${repo.label} untuk project ${item.title}`}
-                      className="inline-flex items-center gap-1.5 border-[2px] border-ink bg-paper px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.08em] transition-colors hover:bg-lime"
+                      aria-label={`${repo.label} untuk proyek ${item.title}`}
+                      className="inline-flex items-center gap-1.5 border-2 border-ink bg-paper px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.08em] transition-colors hover:bg-lime"
                     >
                       <SocialIcon name="github" className="size-3" />
                       {repo.short}
@@ -106,12 +106,12 @@ export default function Projects() {
         <>
           <div key={project.slug} className="mt-7 animate-rise">
             <div className="border-[3px] border-ink bg-pink p-3 shadow-brutal-lg sm:p-4">
-              <div className="relative aspect-[16/9] overflow-hidden border-[3px] border-ink bg-paper">
+              <div className="relative aspect-video overflow-hidden border-[3px] border-ink bg-paper">
                 <ProjectArt slug={project.slug} title={project.title} />
-                <span className="absolute left-3 top-3 border-[2px] border-ink bg-lime px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.12em] shadow-brutal-sm">
+                <span className="absolute left-3 top-3 border-2 border-ink bg-lime px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.12em] shadow-brutal-sm">
                   {project.index}
                 </span>
-                <span className="absolute right-3 top-3 border-[2px] border-ink bg-paper px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.12em]">
+                <span className="absolute right-3 top-3 border-2 border-ink bg-paper px-2.5 py-1 font-mono text-[10px] font-bold tracking-[0.12em]">
                   {project.year}
                 </span>
               </div>
@@ -132,7 +132,7 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="border-[2px] border-ink bg-paper px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.06em]"
+                    className="border-2 border-ink bg-paper px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.06em]"
                   >
                     {tag}
                   </span>
@@ -166,9 +166,9 @@ export default function Projects() {
                     type="button"
                     onClick={() => setOpenSlug(expanded ? null : project.slug)}
                     aria-expanded={expanded}
-                    className="group inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-4 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none"
+                    className="group inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-4 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-lime hover:shadow-none"
                   >
-                    {expanded ? "Tutup Detail" : "Detail Project"}
+                    {expanded ? "Tutup Detail" : "Detail Proyek"}
                     <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                   {project.repos.map((repo) => (
@@ -177,8 +177,8 @@ export default function Projects() {
                       href={repo.href}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`${repo.label} untuk project ${project.title}`}
-                      className="group inline-flex items-center gap-2 border-[3px] border-ink bg-ink px-4 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-paper shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-violet hover:shadow-none"
+                      aria-label={`${repo.label} untuk proyek ${project.title}`}
+                      className="group inline-flex items-center gap-2 border-[3px] border-ink bg-ink px-4 py-2.5 font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-paper shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-violet hover:shadow-none"
                     >
                       <SocialIcon name="github" className="size-3.5" />
                       {repo.short}
@@ -194,16 +194,16 @@ export default function Projects() {
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center gap-1.5" role="tablist" aria-label="Pilih project">
+            <div className="flex items-center gap-1.5" role="tablist" aria-label="Pilih proyek">
               {projects.map((item, index) => (
                 <button
                   key={item.slug}
                   type="button"
                   role="tab"
                   aria-selected={index === active}
-                  aria-label={`Tampilkan project ${item.title}`}
+                  aria-label={`Tampilkan proyek ${item.title}`}
                   onClick={() => goTo(index)}
-                  className={`size-3 border-[2px] border-ink transition-colors ${
+                  className={`size-3 border-2 border-ink transition-colors ${
                     index === active ? "bg-ink" : "bg-paper hover:bg-pink"
                   }`}
                 />
@@ -214,16 +214,16 @@ export default function Projects() {
               <button
                 type="button"
                 onClick={() => goTo(active - 1)}
-                aria-label="Project sebelumnya"
-                className="grid size-10 place-items-center border-[3px] border-ink bg-paper-light shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-pink hover:shadow-none"
+                aria-label="Proyek sebelumnya"
+                className="grid size-10 place-items-center border-[3px] border-ink bg-paper-light shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-pink hover:shadow-none"
               >
                 <ArrowLeft className="size-4" />
               </button>
               <button
                 type="button"
                 onClick={() => goTo(active + 1)}
-                aria-label="Project selanjutnya"
-                className="grid size-10 place-items-center border-[3px] border-ink bg-paper-light shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none"
+                aria-label="Proyek selanjutnya"
+                className="grid size-10 place-items-center border-[3px] border-ink bg-paper-light shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-lime hover:shadow-none"
               >
                 <ArrowRight className="size-4" />
               </button>

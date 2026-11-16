@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b-[3px] border-ink bg-paper">
-      <div className="flex h-[70px] items-stretch justify-between md:h-[76px]">
+      <div className="flex h-17.5 items-stretch justify-between md:h-19">
         <a
           href="#top"
           className="group flex shrink-0 items-center gap-2.5 border-r-[3px] border-ink bg-lime px-4 transition-colors hover:bg-lime-soft sm:px-6"
@@ -50,7 +50,7 @@ export default function Header() {
               className="group relative py-2 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors hover:text-violet-deep"
             >
               {link.label}
-              <span className="absolute -bottom-0.5 left-0 h-[3px] w-0 bg-ink transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-0.5 left-0 h-0.75 w-0 bg-ink transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
         </nav>
@@ -71,22 +71,22 @@ export default function Header() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Tutup menu" : "Buka menu"}
-          className="flex w-[62px] items-center justify-center border-l-[3px] border-ink bg-paper transition-colors hover:bg-lime lg:hidden"
+          className="flex w-15.5 items-center justify-center border-l-[3px] border-ink bg-paper transition-colors hover:bg-lime lg:hidden"
         >
           <span className="relative block h-4 w-6">
             <span
-              className={`absolute left-0 top-0 h-[3px] w-6 bg-ink transition-transform duration-300 ${
+              className={`absolute left-0 top-0 h-0.75 w-6 bg-ink transition-transform duration-300 ${
                 open ? "translate-y-[6.5px] rotate-45" : ""
               }`}
             />
             <span
-              className={`absolute left-0 top-[6.5px] h-[3px] w-6 bg-ink transition-opacity duration-200 ${
+              className={`absolute left-0 top-[6.5px] h-0.75 w-6 bg-ink transition-opacity duration-200 ${
                 open ? "opacity-0" : "opacity-100"
               }`}
             />
             <span
-              className={`absolute left-0 top-[13px] h-[3px] w-6 bg-ink transition-transform duration-300 ${
-                open ? "-translate-y-[6.5px] -rotate-45" : ""
+              className={`absolute left-0 top-3.25 h-0.75 w-6 bg-ink transition-transform duration-300 ${
+                open ? "translate-y-[-6.5px] -rotate-45" : ""
               }`}
             />
           </span>
@@ -96,7 +96,7 @@ export default function Header() {
       <div
         id="mobile-menu"
         className={`overflow-hidden border-t-[3px] border-ink bg-paper transition-[max-height,opacity] duration-300 lg:hidden ${
-          open ? "max-h-[520px] opacity-100" : "max-h-0 border-t-0 opacity-0"
+          open ? "max-h-130 opacity-100" : "max-h-0 border-t-0 opacity-0"
         }`}
       >
         <nav aria-label="Navigasi mobile" className="flex flex-col">

@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   title: "Ahmad Zainudin Fanani — Software Developer",
   description:
-    "Portofolio Ahmad Zainudin Fanani (Fanani), mahasiswa aktif D4 Teknik Informatika Politeknik Negeri Malang yang membangun aplikasi web dan mobile dengan Next.js, Laravel, dan Flutter.",
+    "Portofolio Ahmad Zainudin Fanani (Fanani), mahasiswa D4 Teknik Informatika Politeknik Negeri Malang yang mengembangkan aplikasi web dan mobile dengan Next.js, Laravel, dan Flutter.",
   keywords: [
     "Ahmad Zainudin Fanani",
     "Fanani",
@@ -41,7 +41,7 @@ export const metadata = {
   openGraph: {
     title: "Ahmad Zainudin Fanani — Software Developer",
     description:
-      "Portofolio Ahmad Zainudin Fanani. Web, mobile, dan machine learning projects.",
+      "Portofolio Ahmad Zainudin Fanani, Software Developer dengan fokus pada web development, mobile development, dan machine learning.",
     type: "website",
     locale: "id_ID",
   },

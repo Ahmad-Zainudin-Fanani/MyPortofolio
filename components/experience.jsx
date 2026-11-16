@@ -24,12 +24,13 @@ function ContactPanel() {
         </p>
 
         <h2 className="mt-5 font-display text-[clamp(2rem,3.4vw,2.9rem)] uppercase leading-[0.92] tracking-[-0.02em]">
-          Mari bangun sesuatu yang luar biasa, bersama.
+          Mari bangun sesuatu yang bermakna.
         </h2>
 
         <p className="mt-4 max-w-xs text-sm leading-relaxed text-paper/80">
-          Punya ide project, butuh bantuan development, atau ingin sekadar
-          berdiskusi? Kirim pesan — saya akan balas secepatnya.
+          Terbuka untuk kesempatan kerja, kolaborasi proyek, dan diskusi seputar
+          pengembangan teknologi. Punya ide atau peluang menarik? Mari terhubung
+          dan berdiskusi.
         </p>
       </div>
 
@@ -38,7 +39,7 @@ function ContactPanel() {
           href={profile.gmailCompose}
           target="_blank"
           rel="noreferrer"
-          className="group inline-flex items-center gap-2.5 border-[3px] border-ink bg-paper-light px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-ink shadow-brutal transition-all duration-150 hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-lime hover:shadow-none"
+          className="group inline-flex items-center gap-2.5 border-[3px] border-ink bg-paper-light px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] text-ink shadow-brutal transition-all duration-150 hover:translate-x-0.75 hover:translate-y-0.75 hover:bg-lime hover:shadow-none"
         >
           Hubungi Saya
           <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -66,10 +67,11 @@ export default function Experience() {
           />
           <div className="relative">
             <p className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-ink/55">
-              Track record
+              Rekam jejak
             </p>
-            <h2 className="mt-1 font-display text-2xl uppercase leading-none tracking-tight lg:mt-3 lg:text-[1.7rem]">
-              Experience
+            <h2 className="mt-1 font-display text-2xl uppercase leading-none tracking-tight lg:mt-3 lg:text-xl xl:text-[1.4rem]">
+              <span className="block">Pengalaman</span>
+              <span className="block">Proyek</span>
             </h2>
             <ArrowRight className="mt-3 hidden size-5 lg:block" />
           </div>
@@ -82,7 +84,7 @@ export default function Experience() {
               <li key={`${item.role}-${item.org}`} className="relative">
                 <span
                   aria-hidden="true"
-                  className="absolute -left-[31px] top-1.5 size-3.5 border-[3px] border-ink bg-lime"
+                  className="absolute -left-7.75 top-1.5 size-3.5 border-[3px] border-ink bg-lime"
                 />
                 <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                   <h3 className="font-mono text-[11px] font-bold uppercase leading-snug tracking-[0.06em] sm:text-xs">
@@ -101,7 +103,7 @@ export default function Experience() {
             ))}
           </ol>
 
-          <div className="mt-7 flex flex-wrap items-center gap-4 border-[3px] border-ink bg-lime p-4 shadow-brutal-sm">
+          <div className="mt-7 flex flex-wrap items-center gap-4 border-[3px] border-ink bg-lime p-4 shadow-brutal-sm selection:bg-ink selection:text-lime">
             <span className="grid size-11 shrink-0 place-items-center border-[3px] border-ink bg-paper-light">
               <svg
                 aria-hidden="true"
@@ -119,23 +121,22 @@ export default function Experience() {
               </svg>
             </span>
             <div className="min-w-0">
-              <p className="font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-ink/55">
+              <p className="font-mono text-[9px] font-bold uppercase tracking-[0.18em] text-ink/70">
                 Pendidikan
               </p>
               <h3 className="mt-0.5 font-display text-base uppercase leading-tight sm:text-lg">
                 {education.school}
               </h3>
-              <p className="mt-1 font-mono text-[10px] font-semibold uppercase tracking-[0.06em] text-ink/65">
+              <p className="mt-1.5 font-mono text-sm font-semibold leading-snug tracking-[0.02em] text-ink">
                 {education.degree} · {education.department}
               </p>
-              <p className="mt-0.5 font-mono text-[10px] font-semibold uppercase tracking-[0.06em] text-ink/65">
-                Mahasiswa aktif {education.semester} · {education.period} · IPK{" "}
-                {education.gpa}
+              <p className="mt-1 font-mono text-xs font-medium leading-snug tracking-normal text-ink/80">
+                {education.semester} · {education.period} · IPK {education.gpa}
               </p>
             </div>
           </div>
 
-          <CvButton className="group mt-6 inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none">
+          <CvButton className="group mt-6 inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-4 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.12em] shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-lime hover:shadow-none">
             Lihat CV Lengkap
             <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" />
           </CvButton>

@@ -281,7 +281,7 @@ export default function ProjectArt({ slug, title, className = "" }) {
     <svg
       viewBox="0 0 800 440"
       role="img"
-      aria-label={`Ilustrasi project ${title}`}
+      aria-label={`Ilustrasi proyek ${title}`}
       className={`h-full w-full ${className}`}
       preserveAspectRatio="xMidYMid slice"
     >

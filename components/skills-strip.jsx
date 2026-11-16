@@ -8,10 +8,10 @@ export default function SkillsStrip() {
         <div className="flex items-center justify-between gap-4 border-b-[3px] border-ink bg-violet px-5 py-4 text-paper lg:w-[210px] lg:shrink-0 lg:border-b-0 lg:border-r-[3px] lg:px-6 lg:py-6">
           <div>
             <p className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-paper/60">
-              My toolkit
+              Kompetensi inti
             </p>
             <h2 className="mt-1 font-display text-2xl uppercase leading-none tracking-tight">
-              Skills
+              Keahlian
             </h2>
           </div>
           <ArrowRight className="size-5" />

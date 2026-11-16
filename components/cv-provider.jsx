@@ -144,7 +144,7 @@ function CvDialog({ onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-start justify-center bg-ink/80 p-3 sm:p-6"
+      className="fixed inset-0 z-100 flex items-start justify-center bg-ink/80 p-3 sm:p-6"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
@@ -163,7 +163,7 @@ function CvDialog({ onClose }) {
               ? "translate3d(0, calc(-100% - 4px), 0)"
               : "translate3d(0, 0, 0)",
           }}
-          className={`absolute inset-x-0 top-0 z-20 flex items-center justify-between gap-3 border-b-[3px] border-ink bg-lime px-4 py-3 transition-transform duration-[280ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform sm:px-6 ${
+          className={`absolute inset-x-0 top-0 z-20 flex items-center justify-between gap-3 border-b-[3px] border-ink bg-lime px-4 py-3 transition-transform duration-280 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform sm:px-6 ${
             headerHidden ? "pointer-events-none" : ""
           }`}
         >
@@ -185,7 +185,7 @@ function CvDialog({ onClose }) {
           </div>
 
           <div className="flex shrink-0 items-center gap-2">
-            <span className="hidden border-[2px] border-ink bg-paper-light px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.1em] sm:inline-flex">
+            <span className="hidden border-2 border-ink bg-paper-light px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-widest sm:inline-flex">
               {cvPages.length} halaman
             </span>
             <button
@@ -193,7 +193,7 @@ function CvDialog({ onClose }) {
               type="button"
               onClick={onClose}
               aria-label="Tutup CV"
-              className="group inline-flex shrink-0 items-center gap-2 border-[3px] border-ink bg-paper-light px-2.5 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.1em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-pink hover:shadow-none sm:px-3.5"
+              className="group inline-flex shrink-0 items-center gap-2 border-[3px] border-ink bg-paper-light px-2.5 py-2 font-mono text-[10px] font-bold uppercase tracking-widest shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-pink hover:shadow-none sm:px-3.5"
             >
               <span className="hidden sm:inline">Tutup</span>
               <svg
@@ -260,9 +260,9 @@ function CvDialog({ onClose }) {
               href={profile.gmailCompose}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-3.5 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.1em] shadow-brutal-sm transition-all duration-150 hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-lime hover:shadow-none"
+              className="group inline-flex items-center gap-2 border-[3px] border-ink bg-paper-light px-3.5 py-2 font-mono text-[10px] font-bold uppercase tracking-widest shadow-brutal-sm transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:bg-lime hover:shadow-none"
             >
-              Hubungi via Gmail
+              Hubungi via Email
               <ArrowUpRight className="size-3.5 transition-transform duration-300 group-hover:rotate-45" />
             </a>
           </div>

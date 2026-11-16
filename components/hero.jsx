@@ -11,13 +11,13 @@ function PortraitPlaceholder() {
   const photo = profile.photo;
 
   return (
-    <div className="relative w-[250px] sm:w-[290px] xl:w-[330px]">
+    <div className="relative w-62.5 sm:w-72.5 xl:w-82.5">
       <div
         aria-hidden="true"
         className="absolute inset-0 translate-x-3 translate-y-3 border-[3px] border-ink bg-lime"
       />
       <div className="relative border-[3px] border-ink bg-paper p-2.5">
-        <div className="relative aspect-[3/4] overflow-hidden border-[3px] border-ink bg-grid">
+        <div className="relative aspect-3/4 overflow-hidden border-[3px] border-ink bg-grid">
           {photo && (
             <Image
               src={photo}
@@ -32,7 +32,7 @@ function PortraitPlaceholder() {
             viewBox="0 0 300 400"
             className={`absolute inset-0 h-full w-full ${photo ? "hidden" : ""}`}
             role="img"
-            aria-label="Placeholder foto profil Ahmad Zainudin Fanani"
+            aria-label="Ilustrasi foto profil Ahmad Zainudin Fanani"
           >
             <circle cx="150" cy="168" r="118" fill="#ff7dae" />
             <circle
@@ -123,7 +123,7 @@ function PortraitPlaceholder() {
 function CodeCard() {
   return (
     <div className="relative z-20 -mt-10 ml-1 w-[min(100%,330px)] border-[3px] border-ink bg-violet p-4 text-paper shadow-brutal sm:-mt-14 sm:ml-4 xl:ml-6">
-      <div className="mb-3 flex items-center gap-1.5 border-b-[2px] border-paper/25 pb-2.5">
+      <div className="mb-3 flex items-center gap-1.5 border-b-2 border-paper/25 pb-2.5">
         <span className="size-2.5 border border-ink bg-pink" />
         <span className="size-2.5 border border-ink bg-lime" />
         <span className="size-2.5 border border-ink bg-orange" />
@@ -206,19 +206,19 @@ export default function Hero() {
             <span className="block">Developer</span>
           </h1>
 
-          <p className="mt-6 max-w-[33rem] animate-rise text-[15px] leading-relaxed text-ink/75 [animation-delay:160ms] sm:text-base">
+          <p className="mt-6 max-w-132 animate-rise text-[15px] leading-relaxed text-ink/75 [animation-delay:160ms] sm:text-base">
             {profile.tagline}
           </p>
 
           <div className="mt-8 flex animate-rise flex-col gap-3 [animation-delay:240ms] sm:flex-row sm:items-center">
             <a
               href="#projects"
-              className="group inline-flex items-center justify-center gap-2.5 border-[3px] border-ink bg-lime px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] shadow-brutal transition-all duration-150 hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none"
+              className="group inline-flex items-center justify-center gap-2.5 border-[3px] border-ink bg-lime px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] shadow-brutal transition-all duration-150 hover:translate-x-0.75 hover:translate-y-0.75 hover:shadow-none"
             >
-              Lihat Project Saya
+              Lihat Proyek Saya
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
-            <CvButton className="group inline-flex items-center justify-center gap-2.5 border-[3px] border-ink bg-paper-light px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] shadow-brutal transition-all duration-150 hover:translate-x-[3px] hover:translate-y-[3px] hover:bg-pink-soft hover:shadow-none">
+            <CvButton className="group inline-flex items-center justify-center gap-2.5 border-[3px] border-ink bg-paper-light px-5 py-3.5 font-mono text-[11px] font-bold uppercase tracking-[0.12em] shadow-brutal transition-all duration-150 hover:translate-x-0.75 hover:translate-y-0.75 hover:bg-pink-soft hover:shadow-none">
               Lihat CV
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </CvButton>
@@ -226,7 +226,7 @@ export default function Hero() {
 
           <div className="mt-9 animate-rise [animation-delay:320ms]">
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-ink/60">
-              Connect with me
+              Terhubung dengan saya
             </p>
             <div className="mt-3 flex items-center gap-2.5">
               {socialLinks.map((social) => (
@@ -238,7 +238,7 @@ export default function Hero() {
                   aria-label={social.label}
                   className="grid size-10 place-items-center border-[3px] border-ink bg-paper-light shadow-brutal-sm transition-all duration-150 hover:-translate-y-0.5 hover:bg-lime hover:shadow-brutal"
                 >
-                  <SocialIcon name={social.icon} className="size-[18px]" />
+                  <SocialIcon name={social.icon} className="size-4.5" />
                 </a>
               ))}
             </div>
@@ -254,8 +254,8 @@ export default function Hero() {
             aria-hidden="true"
             className="absolute -right-8 -top-8 size-32 rotate-12 text-lime [&>path]:stroke-ink [&>path]:stroke-[4px] sm:size-40"
           />
-          <span className="absolute left-4 top-5 rotate-[-6deg] border-[3px] border-ink bg-lime px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.16em] sm:left-7">
-            Open to work
+          <span className="absolute left-4 top-5 -rotate-6 border-[3px] border-ink bg-lime px-2.5 py-1 font-mono text-[9px] font-bold uppercase tracking-[0.16em] sm:left-7">
+            Open to Work
           </span>
 
           <div className="relative z-10 mt-4">
